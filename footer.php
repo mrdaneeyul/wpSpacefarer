@@ -15,17 +15,9 @@
 
 	<footer id="colophon" class="site-footer">
 		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'spacefarer' ) ); ?>">
-				<?php
-				/* translators: %s: CMS name, i.e. WordPress. */
-				printf( esc_html__( 'Proudly powered by %s', 'spacefarer' ), 'WordPress' );
-				?>
-			</a>
-			<span class="sep"> | </span>
-				<?php
-				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Theme: %1$s by %2$s.', 'spacefarer' ), 'spacefarer', '<a href="http://twitter.com/mrdaneeyul">Daniel Müller</a>' );
-				?>
+			<?php
+			printf( esc_html__( 'site by %1$s.', 'spacefarer' ), '<a href="http://twitter.com/mrdaneeyul" target="_blank">daniel müller</a>' );
+			?>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->
