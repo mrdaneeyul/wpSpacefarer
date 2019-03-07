@@ -39,18 +39,12 @@
 			if ( is_front_page() ) :
 				?>
 				<img id="header-image" src="<?php header_image(); ?>" height="<?php echo get_custom_header()->height; ?>" width="<?php echo get_custom_header()->width; ?>" alt="<?php bloginfo( 'name' ); ?>" />
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 				<?php
 			else :
 				?>
 				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
 				<?php
-			endif;
-			$spacefarer_description = get_bloginfo( 'description', 'display' );
-			if ( $spacefarer_description || is_customize_preview() ) :
-				?>
-				<p class="site-description"><?php echo $spacefarer_description; /* WPCS: xss ok. */ ?></p>
-			<?php endif; ?>
+			endif;?>
 		</div><!-- .site-branding -->
 		<nav id="site-navigation" class="main-navigation">
 			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'spacefarer' ); ?></button>
