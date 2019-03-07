@@ -25,6 +25,57 @@ function spacefarer_customize_register( $wp_customize ) {
 			'render_callback' => 'spacefarer_customize_partial_blogdescription',
 		) );
 	}
+	
+	/////CUSTOM COLOR SETTINGS---------------------------------------------------------------------
+	
+	// main color ( site title, h1, h2, h4. h6, widget headings, nav links, footer headings )
+	$txtcolors[] = array(
+		'slug'=>'color_scheme_1', 
+		'default' => '#080c55',
+		'label' => 'Main Color'
+	);
+	 
+	// secondary color ( site description, sidebar headings, h3, h5, nav links on hover )
+	$txtcolors[] = array(
+		'slug'=>'color_scheme_2', 
+		'default' => '#f76571',
+		'label' => 'Secondary Color'
+	);
+	 
+	// link color
+	$txtcolors[] = array(
+		'slug'=>'link_color', 
+		'default' => '#b27dfb',
+		'label' => 'Tertiary Color'
+	);
+	 
+	// link color ( hover, active )
+	$txtcolors[] = array(
+		'slug'=>'hover_link_color', 
+		'default' => '#9e4059',
+		'label' => 'Link Color (on hover)'
+	);
+	// add the settings and controls for each color
+	foreach( $txtcolors as $txtcolor ) {
+		// SETTINGS
+		$wp_customize->add_setting(
+			$txtcolor['slug'], array(
+				'default' => $txtcolor['default'],
+				'type' => 'option', 
+				'capability' =>  'edit_theme_options'
+			)
+		);
+		 // CONTROLS
+		$wp_customize->add_control(
+			new WP_Customize_Color_Control(
+				$wp_customize,
+				$txtcolor['slug'], 
+				array('label' => $txtcolor['label'], 
+				'section' => 'colors',
+				'settings' => $txtcolor['slug'])
+			)
+		);
+	}
 }
 add_action( 'customize_register', 'spacefarer_customize_register' );
 
