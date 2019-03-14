@@ -16,7 +16,7 @@
 	<footer id="colophon" class="site-footer">
 		<div class="site-info">
 			<?php
-			printf( esc_html__( 'site by %1$s.', 'spacefarer' ), '<a href="http://twitter.com/mrdaneeyul" target="_blank">daniel müller</a>' );
+			printf( esc_html__( 'site by %1$s', 'spacefarer' ), '<a href="http://twitter.com/mrdaneeyul" target="_blank">daniel müller</a>' );
 			?>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->

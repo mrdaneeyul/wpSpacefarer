@@ -23,11 +23,7 @@
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'spacefarer' ); ?></a>
 
-	<header id="masthead" class="site-header"
-		<?php if ( is_front_page() ) : ?>
-			<?php echo 'style="background-image: linear-gradient(#f76571, #b27dfb); height: 100vh; text-align: center;"'?>
-		<?php endif;?>
-		> <!-- end of header tag-->
+	<header id="masthead" class="site-header">
 		<div class="stars">
 			<?php for ($i = 0; $i < 100; $i++) {
 				echo '<div class="starContainer"><div class="star"></div></div>';
@@ -50,6 +46,7 @@
 			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'spacefarer' ); ?></button>
 			<?php
 			wp_nav_menu( array(
+				'menu' => 'Menu',
 				'theme_location' => 'menu-1',
 				'menu_id'        => 'primary-menu',
 			) );
@@ -57,4 +54,11 @@
 		</nav><!-- #site-navigation -->
 	</header><!-- #masthead -->
 
-	<div id="content" class="site-content">
+	<div id="content" class="site-content" style="
+		/*border-width: 30px;
+		border-style: solid;
+		-webkit-border-image: url(<?php echo get_template_directory_uri() . '/images/border.png'; ?>) 30 stretch; /* Safari 3.1-5 */
+		-o-border-image: url(<?php echo get_template_directory_uri() . '/images/border.png'; ?>) 30 stretch; /* Opera 11-12.1 */
+		border-image: url(<?php echo get_template_directory_uri() . '/images/border.png'; ?>) 30 stretch;
+		*/
+	">
