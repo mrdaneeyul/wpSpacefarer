@@ -13,6 +13,7 @@
 <!doctype html>
 <html <?php language_attributes(); ?>>
 <head>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="https://gmpg.org/xfn/11">
@@ -43,7 +44,6 @@
 			endif;?>
 		</div><!-- .site-branding -->
 		<nav id="site-navigation" class="main-navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'spacefarer' ); ?></button>
 			<?php
 			wp_nav_menu( array(
 				'menu' => 'Menu',

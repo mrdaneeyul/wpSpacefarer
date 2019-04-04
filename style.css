@@ -77,7 +77,6 @@ body {
 
 h1 {
 	font-size: 2em;
-	padding: 2em 0 0.67em
 }
 
 /* Grouping content
@@ -389,6 +388,14 @@ template {
 /*--------------------------------------------------------------
 # Typography
 --------------------------------------------------------------*/
+@font-face {
+    font-family: 'LunchtimeDoublySo';
+    src: url('fonts/lunchds-webfont.woff2') format('woff2'),
+         url('fonts/lunchds-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
 body,
 button,
 input,
@@ -403,7 +410,12 @@ textarea {
 }
 
 h1, h2, h3, h4, h5, h6 {
+	color: #fffcf;
 	clear: both;
+}
+
+h1 {	
+	font-family: LunchtimeDoublySo, Arial, sans-serif;
 }
 
 p {
@@ -615,11 +627,13 @@ textarea {
 ## Links
 --------------------------------------------------------------*/
 a {
-	color: royalblue;
+	color: #080c55;
+	text-decoration: none;
+	font-weight: bold;
 }
 
 a:visited {
-	color: purple;
+	color: #080c55;
 }
 
 a:hover, a:focus, a:active {
@@ -645,7 +659,7 @@ a:hover, a:active {
 }
 
 .main-navigation ul {
-	display: none;
+	display: block;
 	list-style: none;
 	margin: 0;
 	padding-left: 0;
@@ -681,26 +695,26 @@ a:hover, a:active {
 
 .main-navigation li {
 	position: relative;
+	background-color: #080c55;
+	padding: 0.8rem;
+	margin: 0.5rem auto;
+	max-width: 700px;
+	width: 100%;
+	-webkit-transition: all 1s; /* Safari */
+	transition: all 0.25s;
 }
 
 .main-navigation a {
 	display: block;
 	text-decoration: none;
+	letter-spacing: 0.4rem;
+	font-size: 1.4rem;
+	color: #f76571;
+	text-transform: uppercase;
 }
 
-/* Small menu. */
-.menu-toggle,
-.main-navigation.toggled ul {
-	display: block;
-}
-
-@media screen and (min-width: 37.5em) {
-	.menu-toggle {
-		display: none;
-	}
-	.main-navigation ul {
-		display: block;
-	}
+.main-navigation li:hover {
+	background-color: #ffffcf;
 }
 
 .site-main .comment-navigation, .site-main
@@ -865,21 +879,96 @@ a:hover, a:active {
 .site-content {	
 	width: 100%;
     min-width: 300px;
-    max-width: 1400px;
     margin: 50px auto 0;
-    padding: 0 10%;
-	background-color: #ffffcf;
+    padding: 0 5%;
 	z-index: 2;
 	position: relative;
 }
 
 .entry-content h1 {
+	color: #ffffcf;
+	text-shadow: 3px 3px #080c55;
+	font-size: 3rem;
+	text-align: center;
+	padding-top: 3rem;
+	letter-spacing: 0.4rem;
+}
+
+.wp-block-column img {	
+	object-fit: cover;
+}
+
+#followLinks {
+	margin: 5rem auto;
+	max-width: 1024px;
+	text-align: center;
+}
+
+#newsletterForm {
+	margin: 0 auto;
+	padding: 2rem 5rem;
+	max-width: 600px;
+	/*background-color: #4959f7AA;*/
+	background-color: #080c55;
+}
+
+#newsletterForm h3 {
+	font-weight: normal;
+	color: #b9e667;
+	text-transform: uppercase;
+	letter-spacing: 0.3rem;
+	font-size: 2rem;
+}
+
+#newsletterForm input {
+	padding: 1rem;
+	width: 100%;
+	text-align: center;
+	background-color: #ffffcf;
+}
+
+#newsletterForm input[type="submit"] {
+	border: none;
+	font-size: 2rem;
+	text-transform: uppercase;
+	letter-spacing: 0.3rem;
+	background-color: #b9e667;
+	/*color: #f76571;*/
+	color: #080c55;
+	cursor: pointer;
+	-webkit-transition: all 1s; /* Safari */
+	transition: all 0.25s;
+}
+
+#newsletterForm input[type="submit"]:hover, #newsletterForm input[type="submit"]:active {
+	background-color: #ffffcf;
+}
+
+
+.innerContent {
+	margin: 5rem auto;
+	max-width: 1024px;
+	background-color: #ffffcf;
+	padding: 5rem;
+}
+
+.innerContent figure {
+	margin-left: -5rem;
+	margin-right: -5rem;
+}
+
+.site-info {
+	color: #ffffcf;
 	text-align: center;
 }
 
 @media only screen and (min-width: 768px) {
 	.site-content {
 		width: 80%;
+	}
+	.entry-content h1 {
+		font-size: 4rem;
+		padding-top: 4rem;
 	}
 }
 	
@@ -937,6 +1026,35 @@ object {
 /* Make sure logo link wraps around logo image. */
 .custom-logo-link {
 	display: inline-block;
+}
+
+figure.wp-block-image.gameSquare {
+	margin: 3rem auto;
+}
+
+.gameSquare figcaption {
+	margin: 0;
+	margin-top: -0.5rem;
+	padding: 0.5rem;
+	color: #f76571;
+	text-align: center;
+	font-size: 1rem;
+	background-color: #ffffcf;
+	position: relative;
+	text-transform: uppercase;
+	letter-spacing: 0.3rem;
+}
+
+@media only screen and (min-width: 768px) {
+	
+	figure.wp-block-image.gameSquare {
+		margin: 5rem auto;
+	}
+	
+	.gameSquare figcaption {
+		font-size: 2rem;
+	letter-spacing: 0.5rem;
+	}
 }
 
 /*--------------------------------------------------------------
@@ -1018,11 +1136,12 @@ object {
 .site-header {
 	 height: 100vh;
 	 text-align: center;
+	 padding: 5%;
 }
 
 .site-branding, nav {
-	position: relative;
 	z-index: 1;
+	position: relative;
 }
 
 #header-image {
@@ -1037,12 +1156,20 @@ object {
 	}
 	
 	.site-branding, nav {
-		top: 20%;
+		top: 10%;
+	}
+	
+	.main-navigation li {
+		width: 60%;
 	}
 }
 	
 @media only screen and (min-width: 1440px) {
 	#header-image {
+		width: 30%;
+	}
+	
+	.main-navigation li {
 		width: 30%;
 	}
 }
@@ -1052,9 +1179,13 @@ object {
 # Stars
 --------------------------------------------------------------*/
 
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
 body {
 	background-image: linear-gradient(#f76571, #b27dfb);
-	overflow-x: hidden;
 }
 
 .stars .starContainer {
